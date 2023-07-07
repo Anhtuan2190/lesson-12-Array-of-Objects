@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array of Objects</title>
+  </head>
+  <body>
+    <script>
+      let carArr = [];
+      let n;
+
+      function inputCar(i) {
+        let newCar = new Object();
+        newCar.name = prompt("Enter carArr[" + (i + 1) + "] name: ");
+        newCar.color = prompt("Enter carArr[" + (i + 1) + "] color: ");
+        newCar.capacity = Number(
+          prompt("Enter carArr[" + (i + 1) + "] capacity: ")
+        );
+        return newCar;
+      }
+
+      function outputCar(car) {
+        console.log(car);
+      }
+
+      function inputCarArray() {
+        n = Number(prompt("Enter number of cars: "));
+        for (let i = 0; i < n; i++) {
+          carArr[i] = inputCar(i);
+        }
+      }
+
+      function outputCarArray() {
+        for (let i = 0; i < n; i++) {
+          outputCar(carArr[i]);
+        }
+      }
+
+      inputCarArray();
+      console.log("After input...");
+      outputCarArray();
+
+      console.log("Car which have red color is: ");
+      let redCar = carArr.find((car) => car.color === "red");
+      console.log(redCar);
+
+      console.log("Cars which has red color is: ");
+      let redCars = carArr.filter((car) => car.color === "red");
+      console.log(redCars);
+
+      let numArr = [4, 9, 16, 25];
+      console.log("Array number before mapping: ");
+      console.log(numArr);
+      let squareRootNums = numArr.map(Math.sqrt);
+      console.log("Array number after mapping: ");
+      console.log(squareRootNums);
+    </script>
+  </body>
+</html>

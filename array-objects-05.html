@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let car = new Object();
+
+      function inputCar() {
+        let newCar = new Object();
+        newCar.name = prompt("Enter Name: ")
+        newCar.color = prompt("Enter Color: ");
+        newCar.capacity = Number(prompt("Enter Capacity: "));
+        return newCar;
+      }
+      function outputCar(car) {
+        console.log(car);
+      }
+      let newCar = inputCar();
+      outputCar(newCar);
+
+
+      let carArr = [];
+      let n;
+      function inputCarArray() {
+        n = Number(prompt("Enter number of cars: "));
+        for (let i = 0; i < n; i++) {
+          carArr[i] = inputCar
+        }
+      }
+
+      function outputCarArray() {
+        for(let i = 0; i < n; i++) {
+          ca
+        }
+      }
+
+    </script>
+  </body>
+</html>

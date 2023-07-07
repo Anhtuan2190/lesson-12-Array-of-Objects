@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array of Objects</title>
+  </head>
+  <body>
+    <script>
+      let carArr = [];
+      let n;
+
+      function inputCar(i) {
+        let newCar = new Object();
+        newCar.name = prompt("Enter carArr[" + (i + 1) + "] name: ");
+        newCar.color = prompt("Enter carArr[" + (i + 1) + "] color: ");
+        newCar.capacity = Number(
+          prompt("Enter carArr[" + (i + 1) + "] capacity: ")
+        );
+        return newCar;
+      }
+
+      function outputCar(car) {
+        console.log(car);
+      }
+
+      function inputCarArray() {
+        n = Number(prompt("Enter number of cars: "));
+        for (let i = 0; i < n; i++) {
+          carArr[i] = inputCar(i);
+        }
+      }
+
+      function outputCarArray() {
+        for (let i = 0; i < n; i++) {
+          outputCar(carArr[i]);
+        }
+      }
+
+      inputCarArray();
+      console.log("After input...");
+      outputCarArray();
+
+      function countRedCar(arr) {
+        var count = 0;
+        for (let i = 0; i < n; i++) {
+          if (arr[i].color == "red") {
+            count++;
+          }
+        }
+        return count;
+      }
+      console.log("Count of red color car is: " + countRedCar(carArr));
+
+      function compareCar(car1, car2) {
+        if (car1.capacity > car2.capacity) return 1;
+        if (car1.capacity < car2.capacity) return -1;
+        return 0;
+      }
+
+      function findMaxCapacity(arr) {
+        var max = arr[0];
+        for (let i = 0; i < n; i++) {
+          if (compareCar(arr[i], max) == 1) {
+            max = arr[i];
+          }
+        }
+        return max;
+      }
+      console.log("Max capacity car is: ");
+      console.log(findMaxCapacity(carArr));
+    </script>
+  </body>
+</html>

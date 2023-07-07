@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Objects</title>
+  </head>
+  <body>
+    <script>
+      let fractionX = new Object();
+      fractionX.numerator = 1;
+      fractionX.denominator = 2;
+
+      let fractionY = new Object();
+      fractionY.numerator = 3;
+      fractionY.denominator = 4;
+
+      function outputFraction(fraction) {
+        console.log(fraction.numerator + "/" + fraction.denominator);
+      }
+      console.log("FractionX is: ");
+      outputFraction(fractionX);
+      console.log("FractionY is: ");
+      outputFraction(fractionY);
+
+      function homogenizeDeniminator(fractionX, fractionY) {
+        let commonDenominatorXY = fractionX.denominator * fractionY.denominator;
+        fractionX.numerator = fractionX.numerator * fractionY.denominator;
+        fractionY.numerator = fractionY.numerator * fractionX.denominator;
+        fractionX.denominator = commonDenominatorXY;
+        fractionY.denominator = commonDenominatorXY;
+      }
+      console.log("Hommgenizing denominator of fractionX, fractionY: ");
+      homogenizeDeniminator(fractionX, fractionY);
+      console.log("fractionXY is:");
+      outputFraction(fractionX);
+      outputFraction(fractionY);
+    </script>
+  </body>
+</html>

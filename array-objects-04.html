@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Objects</title>
+  </head>
+  <body>
+    <script>
+      let fractionX = new Object();
+      fractionX.numerator = 1;
+      fractionX.denominator = 2;
+
+      let fractionY = new Object();
+      fractionY.numerator = 3;
+      fractionY.denominator = 4;
+
+      function outputFraction(fraction) {
+        console.log(fraction.numerator + "/" + fraction.denominator);
+      }
+      console.log("FractionX is: ");
+      outputFraction(fractionX);
+      console.log("FractionY is: ");
+      outputFraction(fractionY);
+
+      function compare2Fractions(fractionX, fractionY) {
+      let a = fractionX.numerator / fractionX.denominator;
+      let b = fractionY.numerator / fractionY.denominator;
+      if (a > b) return 1;
+      if (a < b) return -1;
+      return 0;
+      }
+      console.log("Comparing 2 fractionX, fractionY... ");
+      let result = compare2Fractions(fractionX, fractionY)
+      if (result == 0) {
+        console.log("fractionX > fractionY");
+      } else if (result == -1) {
+        console.log("fractionX < fractionY");
+      } else if (result == 0) {
+        console.log("fractionX = fractionY");
+      }
+     
+    </script>
+  </body>
+</html>

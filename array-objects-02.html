@@ -1,22 +1,32 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Document</title>
+    <title>Array Objects</title>
   </head>
   <body>
     <script>
-      let car = new Object();
+      let fraction = new Object();
+      function inputFraction() {
+        fraction.numerator = Number(prompt("Enter numerator: "));
+        fraction.denominator = Number(prompt("Enter denominator: "));
+      }
+      console.log("After input, fraction is: ");
+      inputFraction();
 
-      function inputCar() {
-        let newCar = new Object();
-        newCar.color = prompt("Enter Color : ");
-        newCar.capacity = Number(prompt("Enter Capacity: "));
-        return newCar;
+      function outputFraction() {
+        console.log(fraction.numerator + "/" + fraction.denominator);
       }
-      function outputCar(newCar) {
-        console.log(newCar);
+      console.log("After output, fraction is: ");
+      outputFraction();
+
+      function isPositiveFraction(fraction) {
+        if (fraction.numerator * fraction.denominator > 0) return true;
+        return false;
       }
-      console.log("Car is:");
-      console.log(inputCar());
+      console.log("Is Positive Fraction: ");
+      console.log(isPositiveFraction(fraction));
+
+      
     </script>
   </body>
 </html>
